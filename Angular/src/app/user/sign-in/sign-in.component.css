@@ -1,0 +1,29 @@
+input {
+  background: none;
+  border: 1px solid white;
+}
+
+input {
+  color: white
+}
+
+input:focus {
+  color: black;
+}
+
+form {
+  display: flex;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.822);
+}
+
+.server-err-msg {
+  color: #E83F44;
+  width: 380px;
+}
+
+.error-msg {
+  color: #E83F44;
+}

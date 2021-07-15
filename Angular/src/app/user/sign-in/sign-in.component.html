@@ -1,0 +1,48 @@
+<div class="row container-fluid">
+  <div class="sign-in-form offset-lg-5 col-lg-7 offset-md-3 col-md-9 col-sm-12">
+
+    <div class="float-lg-end float-md-end">
+      <h2 class="">SIGN IN</h2>
+
+      <form class="" [formGroup]="signinForm" (ngSubmit)="onSubmit(signinForm)">
+
+        <!-- Email Id -->
+
+        <div class="mr-2 mt-1">
+          <input type="email" class="form-control rounded" placeholder="Email" name="email" autocomplete="off"
+            formControlName="email">
+          <div class="alert alert-danger py-1 px-2 rounded error-msg" *ngIf="!email.valid && email.touched">
+            <div *ngIf="email.errors.required">
+              <strong>Please enter email</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password -->
+
+        <div class="form-group mx-2 mt-1">
+          <input type="password" class="form-control rounded" placeholder="Password" name="password"
+            formControlName="password">
+          <div class="alert alert-danger py-1 px-2 rounded error-msg" *ngIf="!password.valid && password.touched">
+            <div *ngIf="password.errors.required">
+              <strong>Please enter password</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+
+        <div class="mx-2">
+          <button class="btn btn-primary" type="submit" [disabled]="signinForm.invalid">SIGN IN</button>
+        </div>
+
+      </form>
+
+      <!-- Error -->
+
+      <div class="alert alert-danger py-2 server-err-msg" role="alert" *ngIf="serverErrMsg">
+        <strong>{{ serverErrMsg }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

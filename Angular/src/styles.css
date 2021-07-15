@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap\dist\css\bootstrap.css";
+
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_800,h_600,dpr_3/https://assets.app.engoo.com/images/5Dh9bflpaWg5hzAbhmxqWz.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Calibri';
+  font-weight: normal;
+  font-size: large;
+}

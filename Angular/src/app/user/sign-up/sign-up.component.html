@@ -1,0 +1,117 @@
+<div class="container-fluid row">
+
+  <!-- Overview  -->
+  <div class="content col-xl-8 col-lg-7 col-md-5 pt-5">
+    <div class="fs-4 d-sm-none d-md-none d-lg-block d-xl-block mx-lg-5">
+      <div class="mx-xl-5 mx-lg-0">
+        <blockquote class="mx-lg-5 w-75">
+          AnilTravels is the world's largest online bus ticket booking service trusted by
+          over 25 million happy customers globally. AnilTravels offers bus ticket booking through its website,iOS and
+          Android mobile apps for all major routes.
+        </blockquote>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIGNUP FORM  -->
+  <div class="sign-up-form col-xl-4 col-lg-5 col-md-7">
+
+    <div class="float-end sign-up">
+      <h2 class="text-left">SIGN UP</h2>
+
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+
+        <div class="form-group mb-4">
+          <input type="text" class="form-control rounded text-white" placeholder="Name" name="fullName"
+            autocomplete="off" formControlName="fullName">
+
+          <div class="py-1 px-2 rounded error-msg" *ngIf="!fullName.valid && fullName.touched">
+            <div *ngIf="fullName.errors.required">
+              Please enter Name
+            </div>
+            <div *ngIf="fullName.errors.pattern || fullName.errors.minlength || fullName.errors.maxlength">
+              Accepts Alphabets,space and minimum 4 to maximum 30 characters
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Id -->
+
+        <div class="form-group mb-4">
+          <input type="email" class="form-control rounded text-white" placeholder="Email" name="email"
+            autocomplete="off" formControlName="email">
+          <div class="py-1 px-2 rounded error-msg" *ngIf="!email.valid && email.touched">
+            <div *ngIf="email.errors.required">Please enter Email</div>
+            <div *ngIf="email.errors.pattern">
+              Please enter a valid email address</div>
+          </div>
+        </div>
+
+        <!-- Mobile Number -->
+
+        <div class="form-group mb-4">
+          <input type="text" class="form-control rounded text-white" placeholder="Mobile No" name="mobileNumber"
+            autocomplete="off" formControlName="mobileNumber">
+          <div class="py-1 px-2 rounded error-msg" *ngIf="!mobileNumber.valid && mobileNumber.touched">
+            <div *ngIf="mobileNumber.errors.required">Please enter Mobile Number</div>
+            <div *ngIf="mobileNumber.errors.pattern || mobileNumber.errors.minlength || mobileNumber.errors.maxlength">
+              Please enter a valid mobile number</div>
+          </div>
+        </div>
+
+        <!-- Password -->
+
+        <div class="form-group mb-4">
+          <input type="password" class="form-control rounded text-white" placeholder="Password" name="password"
+            formControlName="password">
+          <div class="py-1 px-2 rounded error-msg" *ngIf="!password.valid && password.touched">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.pattern">
+              Password should contain atleast one uppercase,lowercase,number and special character</div>
+          </div>
+        </div>
+
+        <!-- DOB  -->
+
+        <div class="form-group mb-4">
+          <input type="text" placeholder="dd/mm/yyyy" class="form-control text-white" autocomplete="off" name="dob"
+            formControlName="dob" bsDatepicker [bsConfig]="{ isAnimated: true , adaptivePosition: true ,containerClass:
+        'theme-red'}">
+          <div class="py-1 px-2 rounded error-msg" *ngIf="!dob.valid && dob.touched">
+            <div *ngIf="dob.errors.required">DOB is required</div>
+          </div>
+        </div>
+
+        <!-- GENDER  -->
+
+        <div class="form-group mb-4">
+          <label class="form-check-label me-3">
+            <input type="radio" class="form-check-input" value="Male" name="gender" formControlName="gender">
+            Male
+          </label>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="Female" name="gender" formControlName="gender">
+            Female
+          </label>
+          <div class="py-1 px-2 rounded error-msg" *ngIf="!gender.valid && gender.touched">
+            <div *ngIf="gender.errors.required">Gender is required</div>
+          </div>
+        </div>
+
+        <!-- Submit and Reset -->
+
+        <div class="mt-4">
+          <button class="btn btn-primary me-2" type="submit" [disabled]="signupForm.invalid">Create Account</button>
+        </div>
+      </form>
+
+      <div class=" alert alert-success my-2 py-2 text-center success" *ngIf="showSuccessMsg">
+        <strong>Saved successfully</strong></div>
+
+      <div class="alert alert-danger my-2 py-2 text-center error" *ngIf="serverErrMsg">
+        <strong>{{ serverErrMsg }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

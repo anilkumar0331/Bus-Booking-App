@@ -1,0 +1,57 @@
+.content {
+  color: rgba(228, 208, 208, 0.795);
+}
+
+.sign-up {
+  margin-right: 20%;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+  position: relative;
+  color: white;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 400%;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  color: yellow;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  background: none;
+  width: 400px;
+}
+
+input {
+  color: white;
+  border: 1px solid white;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.822);
+}
+
+.error-msg {
+  background-color: rgb(248, 215, 218);
+  font-weight: bold;
+  color: #E83F44;
+}
+
+.success,
+.error,
+.error-msg {
+  width: 400px;
+}
+
+.error {
+  color: #E83F44;
+}

@@ -1,0 +1,21 @@
+{
+    "development":{
+        "PORT":3000,
+        "MONGODB_URI":"mongodb://localhost:27017/AnilTravels",
+        "JWT_SECRET":"LINA#912823",
+        "JWT_EXP":"1m"
+    },
+        "QA":{
+        "PORT":4000,
+        "MONGODB_URI":"",
+        "JWT_SECRET":"",
+        "JWT_EXP":""
+    },
+        "production":{
+        "PORT": 5000,
+        "MONGODB_URI":"",
+        "JWT_SECRET":"",
+        "JWT_EXP":""
+    }
+
+}

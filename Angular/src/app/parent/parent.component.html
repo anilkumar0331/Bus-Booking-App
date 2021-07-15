@@ -1,0 +1,12 @@
+<header></header>
+
+<plan-trip *ngIf="!busInfo" (busDetails)="getBusDetails($event)"></plan-trip>
+
+<select-seats *ngIf="busInfo && !bookingInfo" [busDetails]="busInfo" (bookingDetails)="getBookingDetails($event)">
+</select-seats>
+
+<payment *ngIf="bookingInfo && !ticketInfo" [bookingDetailsIn]="bookingInfo"
+  (bookingDetailsOut)="getTicketDetails($event)">
+</payment>
+
+<ticket-confirmation *ngIf="ticketInfo" [ticketDetails]="ticketInfo"></ticket-confirmation>
